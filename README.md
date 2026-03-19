@@ -49,7 +49,7 @@ services:
   n8n:
     image: docker.n8n.io/n8nio/n8n:latest
     container_name: n8n_gilongworld
-    restart: unless-stopped
+    restart: always
     ports:
       - "5678:5678"
     environment:
