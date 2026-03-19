@@ -30,6 +30,13 @@ mkdir -p ~/local-files
 # Ép phân quyền cho Docker
 sudo chown -R 1000:1000 ~/n8n-data
 sudo chown -R 1000:1000 ~/local-files
+sudo chmod -R 775 ~/n8n-data
+sudo chmod -R 775 ~/local-files
+
+# Nhóm để không cần lệnh sudo
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 ```
 
 ---
