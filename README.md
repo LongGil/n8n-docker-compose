@@ -57,23 +57,19 @@ services:
       - NODE_ENV=production
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - N8N_RUNNERS_ENABLED=true
-      
       # --- 2. KẾT NỐI MẠNG (WEBHOOK QUA CLOUDFLARE TUNNEL) ---
       - N8N_HOST=n8n.longgilstudio.com
       - N8N_PORT=5678
       - N8N_PROTOCOL=https
       - WEBHOOK_URL=https://n8n.longgilstudio.com/
-      
       # --- 3. THỜI GIAN HỆ THỐNG ---
       - GENERIC_TIMEZONE=Asia/Ho_Chi_Minh
       - TZ=Asia/Ho_Chi_Minh
-      
       # --- 4. TỐI ƯU Ổ CỨNG (TỰ DỌN LOG) ---
       - EXECUTIONS_DATA_SAVE_ON_ERROR=all
       - EXECUTIONS_DATA_SAVE_ON_SUCCESS=none
       - EXECUTIONS_DATA_PRUNE=true
       - EXECUTIONS_DATA_MAX_AGE=168 # Xóa dữ liệu cũ hơn 7 ngày
-      
     volumes:
       # --- 5. BIND MOUNT (QUẢN LÝ DỮ LIỆU LOCAL) ---
       - ~/n8n-data:/home/node/.n8n
