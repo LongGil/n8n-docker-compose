@@ -77,6 +77,10 @@ services:
       - EXECUTIONS_DATA_SAVE_ON_SUCCESS=none
       - EXECUTIONS_DATA_PRUNE=true
       - EXECUTIONS_DATA_MAX_AGE=168 # Xóa dữ liệu cũ hơn 7 ngày
+      # --- 5. TIỆN ÍCH VÀ TỐI ƯU  ---
+      - N8N_COMMUNITY_PACKAGES_ENABLED=true
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
+
     volumes:
       # --- 5. BIND MOUNT (QUẢN LÝ DỮ LIỆU LOCAL) ---
       - ~/n8n-data:/home/node/.n8n
